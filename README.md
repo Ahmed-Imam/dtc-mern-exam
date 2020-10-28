@@ -30,7 +30,7 @@ $ npm init
 
 # install packages
 $ npm i express body-parser mongoose concurrently
-$ npm i nodemon eslint
+$ npm i nodemon eslint --save-dev
 
 # create client project
 $ cd dtc-mern-exam
