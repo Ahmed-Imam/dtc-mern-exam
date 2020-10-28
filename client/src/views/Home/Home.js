@@ -51,7 +51,6 @@ class Home extends React.PureComponent {
     handleWaypointEnter = () => {
 
         const { users } = this.props
-        console.log(Number(users.totalPages), Number(users.currentPage))
         if (Number(users.totalPages) !== Number(users.currentPage)) {
             this.props.getUserInfo(Number(users.currentPage) + 1, 10)
         }
