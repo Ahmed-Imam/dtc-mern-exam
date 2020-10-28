@@ -17,7 +17,6 @@ const createApi = () => {
       Authorization: `Bearer ${token}`,
     };
   }
-  console.log('API_ROOT', API_ROOT);
   api = axios.create({
     baseURL: API_ROOT,
     responseType: 'json',
