@@ -6,7 +6,7 @@ import { withRouter } from 'react-router';
 import { connect } from 'react-redux'
 import { getUserInfo } from '../../actions/user'
 import Table from '../../components/Table'
-
+import Loader from 'react-loader-spinner'
 const HEADER = [
     { name: '#', width: 50 },
     { name: 'Name', width: 300 },
@@ -75,14 +75,24 @@ class Home extends React.PureComponent {
 
     }
     render() {
+        const { users } = this.props
         return (
             <div>
                 <div style={{ marginLeft: 30, marginRight: 30 }}>
-                    <Table
-                        tableData={this.renderTableContent()}
-                        hasTotal
-                        handleWaypointEnter={() => this.handleWaypointEnter()}
-                        headerContent={HEADER} />
+                    {users && !users.isLoading ?
+                        <Table
+                            tableData={this.renderTableContent()}
+                            hasTotal
+                            handleWaypointEnter={() => this.handleWaypointEnter()}
+                            headerContent={HEADER} />
+                        : <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+                            <Loader
+                                type="Puff"
+                                color="red"
+                                height={20}
+                                width={20} />
+                        </div>
+                    }
                 </div>
             </div>
 

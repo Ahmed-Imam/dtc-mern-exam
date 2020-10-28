@@ -16,7 +16,7 @@ class Header extends React.PureComponent {
         return (
             <HeaderWrapper>
                 <div className="nav">
-                {!isLoginPage && <FontAwesomeIcon onClick={navClicked} size = 'lg' icon={faBars} />}
+                {/* {!isLoginPage && <FontAwesomeIcon onClick={navClicked} size = 'lg' icon={faBars} />} */}
                 <span>Exam App @ReactJS</span>
                 </div>
                 <div className="log-out">
