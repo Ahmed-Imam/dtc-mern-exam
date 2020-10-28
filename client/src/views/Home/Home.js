@@ -79,20 +79,19 @@ class Home extends React.PureComponent {
         return (
             <div>
                 <div style={{ marginLeft: 30, marginRight: 30 }}>
-                    {users && !users.isLoading ?
-                        <Table
-                            tableData={this.renderTableContent()}
-                            hasTotal
-                            handleWaypointEnter={() => this.handleWaypointEnter()}
-                            headerContent={HEADER} />
-                        : <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-                            <Loader
-                                type="Puff"
-                                color="red"
-                                height={20}
-                                width={20} />
-                        </div>
-                    }
+
+                    <Table
+                        tableData={this.renderTableContent()}
+                        hasTotal
+                        handleWaypointEnter={() => this.handleWaypointEnter()}
+                        headerContent={HEADER} />
+                    {users.isLoading && <div style={{ width: '100%', display: 'flex', justifyContent: 'center', marginTop: 5 }}>
+                        <Loader
+                            type="Puff"
+                            color="red"
+                            height={20}
+                            width={20} />
+                    </div>}
                 </div>
             </div>
 
