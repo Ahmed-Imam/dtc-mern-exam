@@ -11,6 +11,7 @@ $ cd dtc-mern-exam
 
 # install app dependencies
 $ npm i or yarn install
+
 # install app client dependencies
 $ cd client 
 $ npm install 
