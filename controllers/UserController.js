@@ -4,6 +4,7 @@ const getUsers = async (req, res, next) => {
     const { page = 1, pageSize = 10 } = req.params;
     const count = await User.countDocuments();
     User.find()
+    .sort({_id:-1}) 
     .limit(pageSize * 1)
     .skip((page - 1) * pageSize)
     .exec()
